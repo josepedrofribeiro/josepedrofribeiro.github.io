@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="pt" data-lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>José Ribeiro · Cibersegurança</title>
+<meta name="description" content="José Pedro Fernandes Ribeiro — operador de ciberdefesa, administração de sistemas e virtualização. Mestrando em Engenharia de Cibersegurança e Cibercrime no IPBeja.">
+<meta name="author" content="José Pedro Fernandes Ribeiro">
+<meta property="og:title" content="José Ribeiro — Cibersegurança">
+<meta property="og:description" content="Operador de ciberdefesa · Virtualização · Mestrado em Engenharia de Cibersegurança e Cibercrime (IPBeja)">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://josepedrofribeiro.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230E1A2B'/%3E%3Cpath d='M20 14h24v4H34v22c0 6-4 10-10 10h-4v-4h4c3 0 6-2 6-6V18h-10z' fill='%23F2B134'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0E1A2B;
+  --deck:#14243A;
+  --line:#24395A;
+  --text:#E8EDF3;
+  --muted:#93A6BC;
+  --amber:#F2B134;
+  --steel:#6E8BAA;
+  --measure:68ch;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{
+  margin:0;background:var(--navy);color:var(--text);
+  font-family:"Archivo",system-ui,sans-serif;font-stretch:100%;
+  font-size:1.0625rem;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration-color:var(--amber);text-underline-offset:.2em}
+a:hover{color:var(--amber)}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+
+/* language switching */
+html[data-lang="pt"] [lang="en"]:not(html){display:none}
+html[data-lang="en"] [lang="pt"]:not(html){display:none}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* top bar */
+.bar{position:sticky;top:0;z-index:10;background:rgba(14,26,43,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:56px}
+.bar nav{display:flex;gap:22px;font-size:.92rem;color:var(--muted);overflow-x:auto;scrollbar-width:none}
+.bar nav a{text-decoration:none;white-space:nowrap}
+.mark{font-weight:800;font-stretch:125%;letter-spacing:.01em;text-decoration:none}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:2px;flex:none}
+.lang button{
+  font:inherit;font-size:.85rem;font-weight:600;color:var(--muted);background:none;border:0;
+  padding:4px 12px;border-radius:999px;cursor:pointer
+}
+.lang button[aria-pressed="true"]{background:var(--amber);color:var(--navy)}
+
+/* hero */
+.hero{padding:96px 0 72px;border-bottom:1px solid var(--line)}
+.hero h1{
+  margin:0;font-weight:850;font-stretch:125%;line-height:.92;
+  font-size:clamp(3rem,10.5vw,8.4rem);letter-spacing:-.02em
+}
+.hero h1 span{display:block}
+.hero h1 .last{color:var(--amber)}
+.role{margin:28px 0 0;font-size:clamp(1.1rem,2.2vw,1.4rem);font-weight:500;font-stretch:87.5%;color:var(--text);max-width:var(--measure)}
+.quote{margin:20px 0 0;color:var(--muted);font-style:italic;max-width:var(--measure)}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:40px}
+.ids{margin:44px 0 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.ids a{display:block;padding:14px 16px;text-decoration:none;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ids a:hover{background:var(--deck);color:var(--text)}
+.ids b{display:block;font-weight:700;font-size:.95rem}
+.ids small{display:block;color:var(--muted);font-size:.85rem;overflow-wrap:anywhere}
+
+/* sections */
+section{padding:72px 0;border-bottom:1px solid var(--line)}
+.sec{display:grid;grid-template-columns:220px 1fr;gap:40px}
+.sec>h2{
+  margin:0;font-size:1.6rem;font-weight:800;font-stretch:112%;line-height:1.15;
+  position:sticky;top:84px;align-self:start
+}
+.body p{margin:0 0 1em;max-width:var(--measure)}
+.lead{font-size:1.2rem;line-height:1.55}
+
+/* timeline */
+.tl{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+.tl>li{position:relative;padding:0 0 36px 28px}
+.tl>li:last-child{padding-bottom:0}
+.tl>li::before{content:"";position:absolute;left:-7px;top:.45em;width:12px;height:12px;border-radius:50%;background:var(--navy);border:2px solid var(--amber)}
+.when{color:var(--amber);font-weight:600;font-size:.92rem}
+.tl h3{margin:2px 0 0;font-size:1.2rem;font-weight:700;line-height:1.3}
+.org{color:var(--muted);margin:2px 0 10px}
+.tl ul{margin:0;padding-left:1.1em;max-width:var(--measure)}
+.tl ul li{margin:.3em 0}
+.tl ul li::marker{color:var(--steel)}
+
+/* certs */
+.certs{list-style:none;margin:0;padding:0;display:grid;gap:18px}
+.certs li{display:grid;grid-template-columns:64px 1fr;gap:16px;align-items:baseline}
+.certs .yr{color:var(--amber);font-weight:700}
+.certs b{display:block;font-weight:650}
+.certs small{color:var(--muted);font-size:.92rem}
+
+/* skills */
+.skills{margin:0;display:grid;grid-template-columns:200px 1fr;gap:0}
+.skills dt,.skills dd{padding:12px 0;border-top:1px solid var(--line);margin:0}
+.skills dt{font-weight:700;padding-right:16px}
+.skills dd{color:var(--muted)}
+.skills dt:first-of-type,.skills dt:first-of-type+dd{border-top:0;padding-top:0}
+
+/* projects */
+.proj{list-style:none;margin:0;padding:0}
+.proj>li{padding:28px 0;border-top:1px solid var(--line)}
+.proj>li:first-child{border-top:0;padding-top:0}
+.proj h3{margin:0;font-size:1.2rem;font-weight:750;line-height:1.3}
+.proj .kind{margin:4px 0 10px;color:var(--muted);font-size:.95rem}
+.proj ul{margin:0 0 12px;padding-left:1.1em;max-width:var(--measure)}
+.proj ul li{margin:.25em 0}
+.proj ul li::marker{color:var(--steel)}
+.proj .tags,.tags{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.tags li{font-size:.8rem;font-weight:600;color:var(--amber);border:1px solid rgba(242,177,52,.45);border-radius:4px;padding:1px 8px}
+.flag{border-left:3px solid var(--amber);padding-left:16px}
+
+footer{padding:40px 0 56px;color:var(--muted);font-size:.92rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+/* entrance: one moment, on the hero name */
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero h1 span{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+.hero h1 span:nth-child(2){animation-delay:.08s}
+
+@media (max-width:820px){
+  .sec{grid-template-columns:1fr;gap:24px}
+  .sec>h2{position:static}
+  .bar nav{display:none}
+  .hero{padding:64px 0 56px}
+  section{padding:56px 0}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .skills{grid-template-columns:1fr}
+  .skills dt{padding-bottom:0}
+  .skills dd{border-top:0;padding-top:4px}
+  .skills dt:first-of-type+dd{padding-top:4px}
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="mark" href="#top">JR</a>
+    <nav aria-label="Secções">
+      <a href="#sobre"><span lang="pt">Sobre</span><span lang="en">About</span></a>
+      <a href="#experiencia"><span lang="pt">Experiência</span><span lang="en">Experience</span></a>
+      <a href="#formacao"><span lang="pt">Formação</span><span lang="en">Education</span></a>
+      <a href="#competencias"><span lang="pt">Competências</span><span lang="en">Skills</span></a>
+      <a href="#projetos"><span lang="pt">Projetos</span><span lang="en">Projects</span></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Idioma / Language">
+      <button type="button" data-set="pt" aria-pressed="true">PT</button>
+      <button type="button" data-set="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <h1><span>José</span><span class="last">Ribeiro</span></h1>
+      <p class="role">
+        <span lang="pt">Operador de ciberdefesa nas Forças Armadas Portuguesas. Administração de sistemas, virtualização e ambientes de cyber range. Mestrando em Engenharia de Cibersegurança e Cibercrime no Instituto Politécnico de Beja.</span>
+        <span lang="en">Cyber defense operator in the Portuguese Armed Forces. Systems administration, virtualization and cyber range environments. Master’s student in Cybersecurity Engineering and Cybercrime at the Polytechnic Institute of Beja.</span>
+      </p>
+      <p class="quote">
+        <span lang="pt">“Se o meu nome está lá, tenho de me orgulhar disso.”</span>
+        <span lang="en">“If my name is on it, I need to be proud of it.”</span>
+      </p>
+
+      <div class="ids">
+        <a href="https://orcid.org/0009-0009-5024-6985" rel="me"><b>ORCID</b><small>0009-0009-5024-6985</small></a>
+        <a href="https://www.cienciavitae.pt/6913-E7F8-B1F1" rel="me"><b>CiênciaID</b><small>6913-E7F8-B1F1</small></a>
+        <a href="https://www.researchgate.net/profile/Jose-Ribeiro-103" rel="me"><b>ResearchGate</b><small>Jose-Ribeiro-103</small></a>
+        <a href="https://independent.academia.edu/JoseRibeiro269" rel="me"><b>Academia.edu</b><small>JoseRibeiro269</small></a>
+        <a href="https://www.linkedin.com/in/josepfribeiro" rel="me"><b>LinkedIn</b><small>josepfribeiro</small></a>
+        <a href="https://github.com/josepedrofribeiro" rel="me"><b>GitHub</b><small>josepedrofribeiro</small></a>
+        <a href="mailto:josepedrofribeiro@proton.me"><b>Email</b><small>josepedrofribeiro@proton.me</small></a>
+      </div>
+    </div>
+  </div>
+
+  <section id="sobre">
+    <div class="wrap sec">
+      <h2><span lang="pt">Sobre</span><span lang="en">About</span></h2>
+      <div class="body">
+        <p class="lead">
+          <span lang="pt">Operador de ciberdefesa com experiência prática em operações de cibersegurança, virtualização e ambientes de cyber range, em contexto militar.</span>
+          <span lang="en">Cyber defense operator with hands-on experience in cybersecurity operations, virtualization and cyber range environments within a military context.</span>
+        </p>
+        <p>
+          <span lang="pt">Administro sistemas Windows Server e Linux com foco em hardening, e participo em exercícios de treino de cibersegurança. Tenho experiência em campanhas de simulação de phishing, ações de sensibilização para a segurança e desenvolvimento de cenários de ameaça. O meu trabalho centra-se na segurança operacional e na resiliência das infraestruturas.</span>
+          <span lang="en">I administer Windows Server and Linux systems with a focus on hardening, and take part in cybersecurity training exercises. I have experience in phishing simulation campaigns, security awareness initiatives and threat scenario development. My work centres on operational security and infrastructure resilience.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experiencia">
+    <div class="wrap sec">
+      <h2><span lang="pt">Experiência</span><span lang="en">Experience</span></h2>
+      <ol class="tl" reversed>
+        <li>
+          <div class="when"><span lang="pt">mar. 2026 – presente</span><span lang="en">Mar 2026 – present</span></div>
+          <h3><span lang="pt">Administração de Sistemas e Operações de Cibersegurança</span><span lang="en">Systems Administration &amp; Cybersecurity Operations</span></h3>
+          <p class="org"><span lang="pt">Comando de Operações de Ciberdefesa, Estado-Maior-General das Forças Armadas</span><span lang="en">Cyber Defense Operations Command, Portuguese Armed Forces General Staff</span></p>
+          <ul lang="pt">
+            <li>Administração e operação segura de serviços de infraestrutura crítica: Active Directory, DNS, DHCP, AD CS, Root CA e Exchange.</li>
+            <li>Gestão e hardening de servidores Windows Server e Linux: configuração segura, patching, controlo de acessos e resiliência dos serviços.</li>
+            <li>Operações de backup e recuperação com Veeam Backup &amp; Replication, garantindo disponibilidade, proteção de dados e recuperação de desastres.</li>
+            <li>Administração de plataformas de virtualização e infraestrutura convergente, incluindo VMware ESXi e Cisco HyperFlex.</li>
+            <li>Implementação e manutenção de serviços de certificados, cadeias de confiança e controlos de autenticação para comunicações internas seguras.</li>
+            <li>Monitorização, resolução de problemas e proteção de serviços, assegurando disponibilidade, integridade, confidencialidade e conformidade com os requisitos de ciberdefesa.</li>
+            <li>Proteção da infraestrutura através de mitigação de vulnerabilidades, baselines de segurança, análise de logs e boas práticas de segurança operacional.</li>
+            <li>Participação em atividades de SOC: monitorização, análise de logs e identificação de potenciais incidentes de segurança.</li>
+          </ul>
+          <ul lang="en">
+            <li>Administration and secure operation of critical infrastructure services, including Active Directory, DNS, DHCP, AD CS, Root CA and Exchange.</li>
+            <li>Management and hardening of Windows Server and Linux systems, ensuring secure configuration, patching, access control and service resilience.</li>
+            <li>Backup and recovery operations with Veeam Backup &amp; Replication, supporting system availability, data protection and disaster recovery.</li>
+            <li>Administration of virtualization and converged infrastructure platforms, including VMware ESXi and Cisco HyperFlex.</li>
+            <li>Implementation and maintenance of certificate services, trust chains and authentication-related controls to support secure internal communications.</li>
+            <li>Monitoring, troubleshooting and securing services to ensure availability, integrity, confidentiality and compliance with cyber defence requirements.</li>
+            <li>Infrastructure protection through vulnerability mitigation, baseline security enforcement, log analysis and operational security best practices.</li>
+            <li>Participation in SOC activities, including monitoring, log analysis and identification of potential security incidents.</li>
+          </ul>
+        </li>
+        <li>
+          <div class="when"><span lang="pt">mar. 2023 – presente</span><span lang="en">Mar 2023 – present</span></div>
+          <h3><span lang="pt">Administrador de Virtualização e Simulação de Phishing</span><span lang="en">Virtualization Administrator &amp; Phishing Simulation</span></h3>
+          <p class="org"><span lang="pt">Comando de Operações de Ciberdefesa, Estado-Maior-General das Forças Armadas</span><span lang="en">Cyber Defense Operations Command, Portuguese Armed Forces General Staff</span></p>
+          <ul lang="pt">
+            <li>Gestão de plataformas de virtualização e ambientes de cyber range para treino avançado de cibersegurança.</li>
+            <li>Conceção e implementação de infraestruturas virtuais e topologias de rede personalizadas.</li>
+            <li>Administração de sistemas Windows Server e Linux com foco em hardening e boas práticas de segurança.</li>
+            <li>Desenvolvimento e execução de campanhas de simulação de phishing e de sensibilização para a segurança.</li>
+            <li>Criação de cenários de ameaça para exercícios de ciberdefesa (blue/red team).</li>
+          </ul>
+          <ul lang="en">
+            <li>Management of virtualization platforms and cyber range environments for advanced cybersecurity training.</li>
+            <li>Design and deployment of virtual infrastructures and custom network topologies.</li>
+            <li>Administration of Windows Server and Linux systems with a focus on system hardening and security best practices.</li>
+            <li>Development and execution of phishing simulation and security awareness campaigns.</li>
+            <li>Creation of threat scenarios for cyber defense training exercises (blue/red team).</li>
+          </ul>
+        </li>
+        <li>
+          <div class="when"><span lang="pt">nov. 2021 – presente</span><span lang="en">Nov 2021 – present</span></div>
+          <h3><span lang="pt">Serviço Militar</span><span lang="en">Military Service</span></h3>
+          <p class="org"><span lang="pt">Força Aérea Portuguesa</span><span lang="en">Portuguese Air Force</span></p>
+          <ul lang="pt"><li>Serviço militar operacional, com colocação em atividades relacionadas com a ciberdefesa.</li></ul>
+          <ul lang="en"><li>Operational military service with assignment to cyber defense-related activities.</li></ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="formacao">
+    <div class="wrap sec">
+      <h2><span lang="pt">Formação</span><span lang="en">Education</span></h2>
+      <div class="body">
+        <ol class="tl" reversed>
+          <li>
+            <div class="when">2026 – 2028</div>
+            <h3><span lang="pt">Mestrado em Engenharia de Cibersegurança e Cibercrime</span><span lang="en">Master’s Degree in Cybersecurity Engineering and Cybercrime</span></h3>
+            <p class="org"><span lang="pt">Instituto Politécnico de Beja</span><span lang="en">Polytechnic Institute of Beja</span></p>
+          </li>
+          <li>
+            <div class="when">2024 – 2026</div>
+            <h3><span lang="pt">CTeSP em Cibersegurança</span><span lang="en">CTeSP (Higher Professional Technical Course) in Cybersecurity</span></h3>
+            <p class="org">ISTEC Lisboa</p>
+          </li>
+          <li>
+            <div class="when"><span lang="pt">fev. 2022 – fev. 2023</span><span lang="en">Feb 2022 – Feb 2023</span></div>
+            <h3><span lang="pt">Curso de Analista Forense Digital</span><span lang="en">Digital Forensics Analyst Course</span></h3>
+            <p class="org"><span lang="pt">IUM – Instituto Universitário Militar, Escola de Ciberdefesa</span><span lang="en">IUM – Military University Institute, Cyber Defence School</span></p>
+            <ul lang="pt"><li>Análise forense digital, resposta a incidentes e formação em cibersegurança.</li></ul>
+            <ul lang="en"><li>Digital forensics analysis, incident response and cybersecurity training.</li></ul>
+          </li>
+        </ol>
+
+        <h3 style="margin:56px 0 20px;font-size:1.2rem;font-weight:800;font-stretch:112%"><span lang="pt">Certificações</span><span lang="en">Certifications</span></h3>
+        <ul class="certs">
+          <li><span class="yr">2025</span><div><b>Check Point Security Administrator R81.20 (CCSA)</b><small>Rumos</small></div></li>
+          <li><span class="yr">2025</span><div><b><span lang="pt">Administração e Configuração do Windows Server 2022</span><span lang="en">Administration and Configuration of Windows Server 2022</span></b><small>Galileu</small></div></li>
+          <li><span class="yr">2025</span><div><b>Scrum Fundamentals Certified (SFC)</b><small>SCRUMstudy</small></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="competencias">
+    <div class="wrap sec">
+      <h2><span lang="pt">Competências</span><span lang="en">Skills</span></h2>
+      <dl class="skills">
+        <dt><span lang="pt">Sistemas operativos</span><span lang="en">Operating systems</span></dt>
+        <dd>Windows Server, Linux</dd>
+        <dt><span lang="pt">Administração de sistemas</span><span lang="en">System administration</span></dt>
+        <dd><span lang="pt">Active Directory, DNS, DHCP, gestão de utilizadores e permissões, hardening</span><span lang="en">Active Directory, DNS, DHCP, user and permission management, system hardening</span></dd>
+        <dt><span lang="pt">Virtualização</span><span lang="en">Virtualization</span></dt>
+        <dd><span lang="pt">VMware ESXi, virtualização de sistemas operativos, ambientes de cyber range, conceção de infraestruturas virtuais</span><span lang="en">VMware ESXi, OS virtualization, cyber range environments, virtual infrastructure design</span></dd>
+        <dt><span lang="pt">Backup e recuperação</span><span lang="en">Backup &amp; recovery</span></dt>
+        <dd><span lang="pt">Veeam Backup &amp; Replication, gestão de backups, operações de restauro, recuperação de desastres</span><span lang="en">Veeam Backup &amp; Replication, backup management, restore operations, disaster recovery</span></dd>
+        <dt><span lang="pt">Redes</span><span lang="en">Networking</span></dt>
+        <dd><span lang="pt">TCP/IP, DNS, DHCP, VLANs, segmentação de rede</span><span lang="en">TCP/IP, DNS, DHCP, VLANs, network segmentation</span></dd>
+        <dt><span lang="pt">Cibersegurança e SOC</span><span lang="en">Cybersecurity &amp; SOC</span></dt>
+        <dd><span lang="pt">Análise de logs, monitorização de segurança, deteção de incidentes, SIEM (QRadar), análise de ameaças</span><span lang="en">Log analysis, security monitoring, incident detection, SIEM (QRadar), threat analysis</span></dd>
+        <dt><span lang="pt">Forense digital</span><span lang="en">Digital forensics</span></dt>
+        <dd><span lang="pt">FTK Imager, Autopsy, recuperação de ficheiros, análise de memória (Volatility), tratamento de evidências</span><span lang="en">FTK Imager, Autopsy, file recovery, memory analysis (Volatility), evidence handling</span></dd>
+        <dt><span lang="pt">Ferramentas de segurança e análise</span><span lang="en">Security &amp; analysis tools</span></dt>
+        <dd>Wireshark, Volatility</dd>
+        <dt><span lang="pt">Competências profissionais</span><span lang="en">Professional skills</span></dt>
+        <dd><span lang="pt">Documentação técnica, análise de incidentes, formação de sensibilização para a segurança, disciplina operacional</span><span lang="en">Technical documentation, incident analysis, security awareness training, operational discipline</span></dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <div class="wrap sec">
+      <h2><span lang="pt">Projetos</span><span lang="en">Projects</span></h2>
+      <ul class="proj">
+
+        <li class="flag">
+          <h3><span lang="pt">Participação no Locked Shields (Blue Team)</span><span lang="en">Locked Shields Participation (Blue Team)</span></h3>
+          <p class="kind"><span lang="pt">Exercício de ciberdefesa do NATO CCDCOE</span><span lang="en">NATO CCDCOE cyber exercise</span></p>
+          <ul lang="pt">
+            <li>Participação no exercício anual Locked Shields, integrado numa blue team.</li>
+            <li>Responsável pela defesa da infraestrutura Windows, incluindo serviços críticos como o AD CS.</li>
+            <li>Resposta a incidentes, hardening de serviços e recuperação de sistemas sob ataque.</li>
+          </ul>
+          <ul lang="en">
+            <li>Took part in the annual Locked Shields exercise as part of a blue team.</li>
+            <li>Responsible for defending Windows infrastructure, including critical services such as ADCS.</li>
+            <li>Handled incident response, service hardening and system recovery under attack conditions.</li>
+          </ul>
+          <ul class="tags"><li>Windows Server</li><li>AD CS</li></ul>
+        </li>
+
+        <li>
+          <h3><span lang="pt">Infraestrutura de cyber range para exercícios de ciberdefesa (CYBERDEX 2024/2026)</span><span lang="en">Cyber range infrastructure for cyber defense exercises (CYBERDEX 2024/2026)</span></h3>
+          <p class="kind"><span lang="pt">Ambiente interno para exercícios de ciberdefesa</span><span lang="en">Internal cyber defense exercise environment</span></p>
+          <ul lang="pt">
+            <li>Conceção e implementação de uma infraestrutura de cyber range completa para exercícios internos blue/red team.</li>
+            <li>Ambientes do tipo empresarial com Active Directory, DNS, DHCP, Exchange e postos de trabalho Windows e Linux.</li>
+            <li>Configuração de firewall pfSense e agentes de segurança de endpoint (McAfee/Trellix) para simular condições defensivas realistas.</li>
+            <li>Preparação de sistemas vulneráveis e superfícies de ataque para cenários controlados de intrusão red team.</li>
+          </ul>
+          <ul lang="en">
+            <li>Designed and deployed a full-scale cyber range infrastructure to support internal blue/red team exercises.</li>
+            <li>Implemented enterprise-like environments including Active Directory, DNS, DHCP, Exchange, Windows and Linux workstations.</li>
+            <li>Configured pfSense firewall and endpoint security agents (McAfee/Trellix) to simulate realistic defensive conditions.</li>
+            <li>Prepared vulnerable systems and attack surfaces to enable controlled red team intrusion scenarios.</li>
+          </ul>
+          <ul class="tags"><li>VMware</li><li>Windows Server</li><li>Linux</li><li>pfSense</li><li>Trellix</li></ul>
+        </li>
+
+        <li>
+          <h3><span lang="pt">Arquitetura de monitorização de segurança e correlação de logs</span><span lang="en">Security monitoring and log correlation architecture</span></h3>
+          <p class="kind"><span lang="pt">Deteção e prevenção de exfiltração de dados</span><span lang="en">Detection and data exfiltration prevention</span></p>
+          <ul lang="pt">
+            <li>Arquitetura de segurança que integra SIEM e mecanismos de deteção baseados em rede.</li>
+            <li>Recolha e correlação de logs com Wazuh para visibilidade centralizada.</li>
+            <li>Suricata IDS/IPS em pfSense para detetar tráfego anómalo e potenciais tentativas de exfiltração.</li>
+            <li>Estratégias de monitorização para melhorar a capacidade de deteção e reforçar a postura de segurança.</li>
+          </ul>
+          <ul lang="en">
+            <li>Designed a security architecture integrating SIEM and network-based detection mechanisms.</li>
+            <li>Implemented log collection and correlation using Wazuh for centralized visibility.</li>
+            <li>Configured Suricata IDS/IPS on pfSense to detect anomalous traffic and potential exfiltration attempts.</li>
+            <li>Developed monitoring strategies to improve detection capabilities and strengthen security posture.</li>
+          </ul>
+          <ul class="tags"><li>Wazuh</li><li>pfSense</li><li>Suricata</li></ul>
+        </li>
+
+        <li>
+          <h3><span lang="pt">Plataforma de simulação de phishing (open source)</span><span lang="en">Phishing simulation platform (open source)</span></h3>
+          <p class="kind"><span lang="pt">Framework de sensibilização e testes de segurança</span><span lang="en">Security awareness and testing framework</span></p>
+          <ul lang="pt">
+            <li>Infraestrutura de simulação de phishing com ferramentas open source para testar a sensibilização dos utilizadores.</li>
+            <li>Integração do GoPhish com o Moodle e um servidor SMTP interno para gestão de campanhas.</li>
+            <li>Abordagem de baixo custo para as organizações avaliarem a suscetibilidade dos utilizadores ao phishing.</li>
+          </ul>
+          <ul lang="en">
+            <li>Developed a phishing simulation infrastructure using open-source tools for user awareness testing.</li>
+            <li>Integrated GoPhish with Moodle and an internal SMTP server for campaign management.</li>
+            <li>Demonstrated a cost-effective approach for organizations to assess user susceptibility to phishing.</li>
+          </ul>
+          <ul class="tags"><li>GoPhish</li><li>Moodle</li><li>SMTP</li></ul>
+        </li>
+
+        <li>
+          <h3><span lang="pt">Sistema adaptativo de campanhas de phishing com seleção de alvos por IA</span><span lang="en">Adaptive phishing campaign system with AI-based targeting</span></h3>
+          <p class="kind"><span lang="pt">Modelo de seleção de utilizadores baseado no risco</span><span lang="en">Risk-based user selection model</span></p>
+          <ul lang="pt">
+            <li>Modelo que seleciona dinamicamente os alvos de phishing com base no perfil de risco de cada utilizador.</li>
+            <li>Considera fatores como a criticidade da função, a sensibilidade dos dados e o comportamento em campanhas anteriores.</li>
+            <li>Maior eficácia das campanhas de sensibilização graças à seleção inteligente de alvos.</li>
+          </ul>
+          <ul lang="en">
+            <li>Designed a model to dynamically select phishing targets based on user risk profiles.</li>
+            <li>Incorporated factors such as role criticality, data sensitivity and prior behavior in previous campaigns.</li>
+            <li>Improved the effectiveness of awareness campaigns through intelligent targeting mechanisms.</li>
+          </ul>
+          <ul class="tags"><li>Python</li><li><span lang="pt">Análise de dados</span><span lang="en">Data analysis</span></li></ul>
+        </li>
+
+        <li>
+          <h3><span lang="pt">Arquitetura de autenticação segura com deteção comportamental e honeypots</span><span lang="en">Secure authentication architecture with behavioral detection and honeypots</span></h3>
+          <p class="kind"><span lang="pt">Controlo de acessos e mecanismos de deceção</span><span lang="en">Access control and deception mechanisms</span></p>
+          <ul lang="pt">
+            <li>Arquitetura concetual que combina sistemas de login físico com monitorização comportamental.</li>
+            <li>Mecanismos de deceção para detetar tentativas de acesso não autorizado.</li>
+            <li>Métodos para correlacionar anomalias de autenticação com potencial atividade maliciosa.</li>
+          </ul>
+          <ul lang="en">
+            <li>Designed a conceptual architecture combining physical login systems with behavioral monitoring.</li>
+            <li>Integrated deception mechanisms to detect unauthorized access attempts.</li>
+            <li>Explored methods to correlate authentication anomalies with potential threat activity.</li>
+          </ul>
+          <ul class="tags"><li>Honeypots</li><li><span lang="pt">Análise comportamental</span><span lang="en">Behavioral analysis</span></li></ul>
+        </li>
+
+        <li>
+          <h3><span lang="pt">Hardening de sistemas Linux com SELinux e AppArmor</span><span lang="en">Linux system hardening using SELinux and AppArmor</span></h3>
+          <p class="kind"><span lang="pt">Proteção de sistemas e controlo de acessos</span><span lang="en">System protection and access control</span></p>
+          <ul lang="pt">
+            <li>Políticas de controlo de acesso obrigatório (MAC) para restringir operações ao nível do sistema.</li>
+            <li>Perfis SELinux e AppArmor para proteger ficheiros e serviços críticos.</li>
+            <li>Maior resiliência contra escalada de privilégios e acessos não autorizados.</li>
+          </ul>
+          <ul lang="en">
+            <li>Implemented mandatory access control policies to restrict system-level operations.</li>
+            <li>Configured SELinux and AppArmor profiles to protect critical files and services.</li>
+            <li>Improved system resilience against privilege escalation and unauthorized access.</li>
+          </ul>
+          <ul class="tags"><li>SELinux</li><li>AppArmor</li></ul>
+        </li>
+
+        <li>
+          <h3><span lang="pt">Análise de ataque e defesa em redes sem fios WPA2-PSK</span><span lang="en">WPA2-PSK wireless attack and defense analysis</span></h3>
+          <p class="kind"><span lang="pt">Avaliação de segurança Wi-Fi</span><span lang="en">Wi-Fi security assessment</span></p>
+          <ul lang="pt">
+            <li>Captura e quebra de handshakes WPA2.</li>
+            <li>Análise de fragilidades em configurações sem fios e políticas de passwords.</li>
+            <li>Proposta de estratégias de mitigação para reforçar a segurança da rede sem fios.</li>
+          </ul>
+          <ul lang="en">
+            <li>Executed capture and cracking of WPA2 handshakes.</li>
+            <li>Analyzed weaknesses in wireless configurations and password policies.</li>
+            <li>Proposed mitigation strategies to strengthen wireless network security.</li>
+          </ul>
+          <ul class="tags"><li>Kali Linux</li><li>Aircrack-ng</li></ul>
+        </li>
+
+        <li>
+          <h3><span lang="pt">Análise forense digital de sistemas comprometidos</span><span lang="en">Digital forensics analysis of compromised systems</span></h3>
+          <p class="kind"><span lang="pt">Investigação de incidentes e análise de evidências</span><span lang="en">Incident investigation and evidence analysis</span></p>
+          <ul lang="pt">
+            <li>Participação em investigações forenses de sistemas comprometidos.</li>
+            <li>Análise de memória, recuperação de ficheiros e exame de metadados.</li>
+            <li>Apoio ao tratamento de evidências e à elaboração de relatórios de incidentes.</li>
+          </ul>
+          <ul lang="en">
+            <li>Participated in forensic investigations of compromised systems.</li>
+            <li>Performed memory analysis, file recovery and metadata examination.</li>
+            <li>Supported evidence handling and reporting for incident analysis.</li>
+          </ul>
+          <ul class="tags"><li>Volatility</li><li>FTK Imager</li><li>Autopsy</li><li>PhotoRec</li></ul>
+        </li>
+
+        <li>
+          <h3><span lang="pt">Infraestrutura empresarial com serviços seguros e integração web</span><span lang="en">Enterprise infrastructure with secure services and web integration</span></h3>
+          <p class="kind">AD, PKI, <span lang="pt">serviços web</span><span lang="en">web services</span>, SSO</p>
+          <ul lang="pt">
+            <li>Implementação de infraestrutura empresarial com Active Directory, DNS, DHCP e Exchange.</li>
+            <li>Certificados SSL e mecanismos seguros de partilha de ficheiros.</li>
+            <li>Intranet com autenticação LDAP e Single Sign-On.</li>
+          </ul>
+          <ul lang="en">
+            <li>Deployed enterprise infrastructure including Active Directory, DNS, DHCP and Exchange services.</li>
+            <li>Implemented SSL certificates and secure file sharing mechanisms.</li>
+            <li>Developed an intranet with LDAP authentication and Single Sign-On integration.</li>
+          </ul>
+          <ul class="tags"><li>Windows Server 2022</li><li>IIS</li><li>LDAP</li><li>FTP</li></ul>
+        </li>
+
+        <li>
+          <h3><span lang="pt">Infraestrutura virtualizada de alta disponibilidade</span><span lang="en">High availability virtualized infrastructure</span></h3>
+          <p class="kind"><span lang="pt">Resiliência, replicação e backup</span><span lang="en">Resilience, replication and backup</span></p>
+          <ul lang="pt">
+            <li>Infraestrutura com serviços de domínio, GPOs, servidores de ficheiros e plataformas de virtualização.</li>
+            <li>Replicação, live migration e estratégias de backup e recuperação.</li>
+            <li>Disponibilidade dos serviços e prontidão para recuperação de desastres.</li>
+          </ul>
+          <ul lang="en">
+            <li>Designed infrastructure with domain services, GPOs, file servers and virtualization platforms.</li>
+            <li>Implemented replication, live migration and backup/recovery strategies.</li>
+            <li>Ensured service availability and disaster recovery readiness.</li>
+          </ul>
+          <ul class="tags"><li>Hyper-V</li><li>VMware</li></ul>
+        </li>
+
+        <li>
+          <h3><span lang="pt">Plataforma de reconhecimento anónimo com mapeamento MITRE ATT&amp;CK</span><span lang="en">Anonymous reconnaissance platform with MITRE ATT&amp;CK mapping</span></h3>
+          <p class="kind"><span lang="pt">Segurança ofensiva e recolha de informação</span><span lang="en">Offensive security and intelligence gathering</span></p>
+          <ul lang="pt">
+            <li>Plataforma de reconhecimento anónimo com Tor e encadeamento de proxies.</li>
+            <li>Integração de ferramentas de scanning e técnicas de descoberta de vulnerabilidades.</li>
+            <li>Mapeamento dos resultados na framework MITRE ATT&amp;CK e geração de relatórios estruturados.</li>
+          </ul>
+          <ul lang="en">
+            <li>Developed a platform for anonymous reconnaissance using Tor and proxy chaining.</li>
+            <li>Integrated scanning tools and vulnerability discovery techniques.</li>
+            <li>Mapped results to the MITRE ATT&amp;CK framework and generated structured reports.</li>
+          </ul>
+          <ul class="tags"><li>Tor</li><li>ProxyChains</li><li>Nmap</li></ul>
+        </li>
+
+        <li>
+          <h3><span lang="pt">Arquitetura avançada de ciberdefesa (simulação Red October)</span><span lang="en">Advanced cyber defense architecture (Red October simulation)</span></h3>
+          <p class="kind"><span lang="pt">Deteção, deceção e Zero Trust</span><span lang="en">Detection, deception and Zero Trust</span></p>
+          <ul lang="pt">
+            <li>Arquitetura de defesa em camadas contra ameaças persistentes avançadas (APT).</li>
+            <li>SIEM, monitorização de rede e capacidades de deteção de anomalias.</li>
+            <li>Acesso Zero Trust com OpenVPN e Cloudflare.</li>
+            <li>Mecanismos de deceção e estratégias de segmentação de rede.</li>
+          </ul>
+          <ul lang="en">
+            <li>Designed a layered defense architecture against advanced persistent threats.</li>
+            <li>Implemented SIEM, network monitoring and anomaly detection capabilities.</li>
+            <li>Integrated Zero Trust access through OpenVPN and Cloudflare.</li>
+            <li>Developed deception mechanisms and network segmentation strategies.</li>
+          </ul>
+          <ul class="tags"><li>pfSense</li><li>Zeek</li><li>Darktrace</li><li>QRadar</li><li>OpenVPN</li><li>Cloudflare</li></ul>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>José Pedro Fernandes Ribeiro · Portugal</span>
+    <a href="mailto:josepedrofribeiro@proton.me">josepedrofribeiro@proton.me</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btns=document.querySelectorAll('.lang button');
+  var titles={pt:'José Ribeiro · Cibersegurança',en:'José Ribeiro · Cybersecurity'};
+  function set(l){
+    root.setAttribute('data-lang',l); root.setAttribute('lang',l);
+    document.title=titles[l];
+    btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.set===l?'true':'false')});
+    try{localStorage.setItem('lang',l)}catch(e){}
+  }
+  var saved=null; try{saved=localStorage.getItem('lang')}catch(e){}
+  var initial=saved||'pt';
+  set(initial);
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.set)})});
+})();
+</script>
+</body>
+</html>
