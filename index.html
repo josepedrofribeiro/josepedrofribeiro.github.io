@@ -13,7 +13,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2317130E'/%3E%3Cpath d='M20 14h24v4H34v22c0 6-4 10-10 10h-4v-4h4c3 0 6-2 6-6V18h-10z' fill='%23E2C48A'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Sora:wght@300..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@200..800&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#0D0B08;
@@ -27,7 +27,7 @@
   --gold:#E2C48A;
   --gold-deep:#B48A45;
   --gold-grad:linear-gradient(135deg,#F1DCAA 0%,#D2AE6C 45%,#A97E3C 100%);
-  --serif:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  --serif:"Sora",system-ui,sans-serif;
   --sans:"Sora",system-ui,sans-serif;
   --measure:66ch;
   --r-lg:28px;--r-md:18px;
@@ -72,7 +72,7 @@ html[data-lang="en"] [lang="pt"]:not(html){display:none}
   border:1px solid var(--line);border-radius:999px;
   box-shadow:0 10px 40px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,236,200,.05);
 }
-.mark{font-family:var(--serif);font-size:1.7rem;line-height:1;text-decoration:none;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.mark{font-family:var(--serif);font-weight:700;font-size:1.35rem;letter-spacing:-.04em;line-height:1;text-decoration:none;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .bar nav{display:flex;gap:26px;font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .bar nav a{text-decoration:none;white-space:nowrap}
 .bar-right{display:flex;align-items:center;gap:10px}
@@ -92,18 +92,19 @@ html[data-lang="en"] [lang="pt"]:not(html){display:none}
 .hero{padding:110px 0 100px}
 .hero .wrap{display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center}
 .kicker{margin:0 0 26px;color:var(--gold);font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase}
-.hero h1{margin:0;font-family:var(--serif);font-weight:500;font-size:clamp(3.4rem,8vw,7rem);line-height:.98;letter-spacing:-.02em}
+.hero h1{margin:0;font-family:var(--serif);font-weight:600;font-size:clamp(3.2rem,7.6vw,6.6rem);line-height:1;letter-spacing:-.045em}
 .hero h1 span{display:block}
-.hero h1 .last{font-style:italic;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em}
+.hero h1 .last{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em}
 .role{margin:30px 0 0;font-size:1.08rem;line-height:1.7;color:#D9CFBD;max-width:34em}
-.quote{margin:18px 0 0;font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--muted)}
+.quote{margin:22px 0 0;font-size:1.05rem;font-weight:300;color:var(--gold);letter-spacing:.01em}
 .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
 
 /* hero side panel */
 .side{border-radius:var(--r-lg);padding:10px;background:linear-gradient(160deg,rgba(255,236,200,.07),rgba(255,236,200,.02) 55%);border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,236,200,.07);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-.years{display:flex;align-items:center;gap:20px;padding:22px 22px 24px}
-.years b{font-family:var(--serif);font-weight:500;font-size:5.2rem;line-height:.8;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.years>span{color:#D9CFBD;font-size:1rem;line-height:1.45;max-width:14em}
+.years{display:grid;grid-template-columns:auto 1fr;align-items:end;column-gap:18px;padding:26px 24px 24px}
+.years b{font-family:var(--sans);font-weight:700;font-size:4.6rem;line-height:.82;letter-spacing:-.06em;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.years>span{display:block;color:var(--text);font-size:.95rem;font-weight:400;line-height:1.4;padding-bottom:4px}
+.years>span small{display:block;color:var(--muted);font-size:.78rem;font-weight:400;margin-top:2px}
 .ids{list-style:none;margin:0;padding:6px;border-radius:20px;background:rgba(13,11,8,.55);border:1px solid var(--line)}
 .ids a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:11px 14px;border-radius:12px;text-decoration:none}
 .ids a:hover{background:rgba(255,236,200,.05);color:var(--text)}
@@ -115,11 +116,11 @@ html[data-lang="en"] [lang="pt"]:not(html){display:none}
 /* sections */
 section{padding:96px 0}
 .sec{display:grid;grid-template-columns:260px 1fr;gap:56px}
-.sec>h2{margin:0;font-family:var(--serif);font-weight:400;font-size:2.8rem;line-height:1;position:sticky;top:110px;align-self:start}
+.sec>h2{margin:0;font-family:var(--serif);font-weight:500;font-size:2.3rem;line-height:1.1;letter-spacing:-.03em;position:sticky;top:110px;align-self:start}
 .sec>h2::after{content:"";display:block;width:56px;height:2px;margin-top:18px;background:var(--gold-grad);border-radius:2px}
 .panel{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--glass);padding:36px}
 .body p{margin:0 0 1em;max-width:var(--measure)}
-.lead{font-family:var(--serif);font-size:1.6rem;line-height:1.35;color:var(--text)}
+.lead{font-family:var(--serif);font-weight:300;font-size:1.4rem;line-height:1.45;letter-spacing:-.01em;color:var(--text)}
 
 /* timeline */
 .tl{list-style:none;margin:0;padding:0;position:relative}
@@ -134,7 +135,7 @@ section{padding:96px 0}
 .tl ul li{margin:.35em 0}
 .tl ul li::marker{color:var(--gold-deep)}
 
-.sub{margin:64px 0 22px;font-family:var(--serif);font-weight:400;font-size:2rem}
+.sub{margin:64px 0 22px;font-family:var(--serif);font-weight:500;font-size:1.6rem;letter-spacing:-.02em}
 .certs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
 .certs li{border:1px solid var(--line);border-radius:var(--r-md);padding:18px;background:var(--glass)}
 .certs .yr{display:block;color:var(--gold);font-size:.72rem;font-weight:700;letter-spacing:.16em}
@@ -158,7 +159,7 @@ section{padding:96px 0}
 .proj .tags,.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
 .tags li{font-size:.76rem;font-weight:600;color:var(--text);border:1px solid var(--line);background:rgba(13,11,8,.45);border-radius:999px;padding:4px 12px}
 .proj>li.flag{border-color:var(--line-2);background:linear-gradient(150deg,rgba(226,196,138,.13),rgba(226,196,138,.02) 60%)}
-.proj>li.flag h3{font-family:var(--serif);font-weight:400;font-size:2rem}
+.proj>li.flag h3{font-weight:600;font-size:1.5rem;letter-spacing:-.02em}
 
 footer{padding:40px 0 64px;color:var(--muted);font-size:.9rem}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:28px}
@@ -186,7 +187,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
   .bar{padding:0 10px}
   .bar .wrap{padding:0 6px 0 18px}
   .bar .btn{display:none}
-  .years b{font-size:4.2rem}
+  .years b{font-size:3.8rem}
   .ids a{flex-wrap:wrap;row-gap:0}
   .ids small{text-align:left;flex-basis:100%;padding-left:16px}
   .proj>li{padding:22px 20px}
@@ -230,10 +231,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
           <span lang="pt">Operador de ciberdefesa nas Forças Armadas Portuguesas. Administração de sistemas, virtualização e ambientes de cyber range. Mestrando em Engenharia de Cibersegurança e Cibercrime no Instituto Politécnico de Beja.</span>
           <span lang="en">Cyber defense operator in the Portuguese Armed Forces. Systems administration, virtualization and cyber range environments. Master’s student in Cybersecurity Engineering and Cybercrime at the Polytechnic Institute of Beja.</span>
         </p>
-        <p class="quote">
-          <span lang="pt">“Se o meu nome está lá, tenho de me orgulhar disso.”</span>
-          <span lang="en">“If my name is on it, I need to be proud of it.”</span>
-        </p>
+        <p class="quote" lang="en-x-both">“If my name is on it, I need to be proud of it.”</p>
         <div class="cta">
           <a class="btn btn-gold" href="#projetos"><span lang="pt">Ver projetos</span><span lang="en">View projects</span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <a class="btn btn-ghost" href="cv-jose-ribeiro.pdf" download><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v8M4.5 6.5 8 10l3.5-3.5M3 13h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span lang="pt">Descarregar CV</span><span lang="en">Download CV</span></a>
@@ -241,7 +239,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       </div>
 
       <aside class="side">
-        <div class="years"><b data-years>5</b><span><span lang="pt">anos em ciberdefesa nas Forças Armadas</span><span lang="en">years in cyber defense with the Armed Forces</span></span></div>
+        <div class="years"><b data-years>5</b><span><span lang="pt">anos em ciberdefesa</span><span lang="en">years in cyber defense</span><small><span lang="pt">Forças Armadas Portuguesas, desde 2021</span><span lang="en">Portuguese Armed Forces, since 2021</span></small></span></div>
         <ul class="ids">
           <li><a href="https://orcid.org/0009-0009-5024-6985" rel="me"><b>ORCID</b><small>0009-0009-5024-6985</small></a></li>
           <li><a href="https://www.cienciavitae.pt/6913-E7F8-B1F1" rel="me"><b>CiênciaID</b><small>6913-E7F8-B1F1</small></a></li>
