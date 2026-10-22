@@ -13,7 +13,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2317130E'/%3E%3Cpath d='M20 14h24v4H34v22c0 6-4 10-10 10h-4v-4h4c3 0 6-2 6-6V18h-10z' fill='%23E2C48A'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Sora:wght@300..700&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#0D0B08;
@@ -27,15 +27,15 @@
   --gold:#E2C48A;
   --gold-deep:#B48A45;
   --gold-grad:linear-gradient(135deg,#F1DCAA 0%,#D2AE6C 45%,#A97E3C 100%);
-  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
-  --sans:"Manrope",system-ui,sans-serif;
+  --serif:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  --sans:"Sora",system-ui,sans-serif;
   --measure:66ch;
   --r-lg:28px;--r-md:18px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;background:var(--ink)}
 body{
-  margin:0;color:var(--text);font-family:var(--sans);font-size:1.02rem;line-height:1.65;
+  margin:0;color:var(--text);font-family:var(--sans);font-size:.98rem;line-height:1.7;font-weight:300;
   -webkit-font-smoothing:antialiased;
   background:
     radial-gradient(1200px 700px at 78% -10%,rgba(210,174,108,.14),transparent 60%),
@@ -91,41 +91,23 @@ html[data-lang="en"] [lang="pt"]:not(html){display:none}
 /* hero */
 .hero{padding:110px 0 100px}
 .hero .wrap{display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center}
-.kicker{margin:0 0 26px;color:var(--gold);font-size:.74rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase}
-.hero h1{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(3.6rem,8.4vw,7.4rem);line-height:.92;letter-spacing:-.015em}
+.kicker{margin:0 0 26px;color:var(--gold);font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase}
+.hero h1{margin:0;font-family:var(--serif);font-weight:500;font-size:clamp(3.4rem,8vw,7rem);line-height:.98;letter-spacing:-.02em}
 .hero h1 span{display:block}
 .hero h1 .last{font-style:italic;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em}
-.role{margin:30px 0 0;font-size:1.14rem;line-height:1.6;color:#D9CFBD;max-width:34em}
+.role{margin:30px 0 0;font-size:1.08rem;line-height:1.7;color:#D9CFBD;max-width:34em}
 .quote{margin:18px 0 0;font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--muted)}
 .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
 
-/* glass dossier card */
-.dossier{
-  position:relative;border-radius:var(--r-lg);padding:28px;
-  background:linear-gradient(160deg,rgba(255,236,200,.07),rgba(255,236,200,.02) 55%);
-  border:1px solid var(--line);
-  box-shadow:0 30px 80px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,236,200,.07);
-  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-  overflow:hidden;
-}
-.dossier::after{content:"";position:absolute;inset:-1px;border-radius:inherit;pointer-events:none;
-  background:radial-gradient(400px 200px at 90% 0%,rgba(226,196,138,.16),transparent 70%)}
-.dossier-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
-.dossier-head p{margin:0;color:var(--gold);font-size:.7rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase}
-.dossier-head h2{margin:8px 0 0;font-family:var(--serif);font-weight:400;font-size:2.2rem;line-height:1.05}
-.badge{flex:none;text-align:right;background:var(--ink);border:1px solid var(--line);border-radius:14px;padding:10px 14px}
-.badge small{display:block;color:var(--muted);font-size:.64rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
-.badge b{display:block;font-size:1rem;font-weight:700;margin-top:2px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0 22px;padding-top:22px;border-top:1px solid var(--line)}
-.stat{border:1px solid var(--line);border-radius:var(--r-md);padding:14px;background:rgba(13,11,8,.35)}
-.stat b{display:block;font-family:var(--serif);font-weight:400;font-size:2.3rem;line-height:1;color:var(--text)}
-.stat span{display:block;margin-top:6px;color:var(--muted);font-size:.8rem;line-height:1.35}
-.stat.hl{border-color:var(--line-2);background:linear-gradient(160deg,rgba(226,196,138,.16),rgba(226,196,138,.03))}
-.stat.hl b{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.ids{list-style:none;margin:0;padding:6px;border-radius:var(--r-md);background:rgba(13,11,8,.55);border:1px solid var(--line)}
+/* hero side panel */
+.side{border-radius:var(--r-lg);padding:10px;background:linear-gradient(160deg,rgba(255,236,200,.07),rgba(255,236,200,.02) 55%);border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,236,200,.07);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.years{display:flex;align-items:center;gap:20px;padding:22px 22px 24px}
+.years b{font-family:var(--serif);font-weight:500;font-size:5.2rem;line-height:.8;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.years>span{color:#D9CFBD;font-size:1rem;line-height:1.45;max-width:14em}
+.ids{list-style:none;margin:0;padding:6px;border-radius:20px;background:rgba(13,11,8,.55);border:1px solid var(--line)}
 .ids a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:11px 14px;border-radius:12px;text-decoration:none}
 .ids a:hover{background:rgba(255,236,200,.05);color:var(--text)}
-.ids b{font-weight:600;font-size:.9rem}
+.ids b{font-weight:500;font-size:.9rem}
 .ids small{color:var(--muted);font-size:.82rem;text-align:right;overflow-wrap:anywhere}
 .ids a::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);flex:none;order:-1;margin-right:-4px}
 .ids a b{margin-right:auto}
@@ -137,7 +119,7 @@ section{padding:96px 0}
 .sec>h2::after{content:"";display:block;width:56px;height:2px;margin-top:18px;background:var(--gold-grad);border-radius:2px}
 .panel{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--glass);padding:36px}
 .body p{margin:0 0 1em;max-width:var(--measure)}
-.lead{font-family:var(--serif);font-size:1.75rem;line-height:1.3;color:var(--text)}
+.lead{font-family:var(--serif);font-size:1.6rem;line-height:1.35;color:var(--text)}
 
 /* timeline */
 .tl{list-style:none;margin:0;padding:0;position:relative}
@@ -146,7 +128,7 @@ section{padding:96px 0}
 .tl>li:last-child{padding-bottom:0}
 .tl>li::before{content:"";position:absolute;left:0;top:.5em;width:11px;height:11px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(226,196,138,.12),0 0 16px rgba(226,196,138,.5)}
 .when{display:inline-block;color:var(--gold);font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
-.tl h3{margin:6px 0 0;font-size:1.25rem;font-weight:700;line-height:1.3}
+.tl h3{margin:6px 0 0;font-size:1.15rem;font-weight:600;line-height:1.3}
 .org{color:var(--muted);margin:4px 0 12px}
 .tl ul{margin:0;padding-left:1.1em;max-width:var(--measure);color:#D9CFBD}
 .tl ul li{margin:.35em 0}
@@ -156,19 +138,19 @@ section{padding:96px 0}
 .certs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
 .certs li{border:1px solid var(--line);border-radius:var(--r-md);padding:18px;background:var(--glass)}
 .certs .yr{display:block;color:var(--gold);font-size:.72rem;font-weight:700;letter-spacing:.16em}
-.certs b{display:block;font-weight:700;margin-top:8px;line-height:1.35}
+.certs b{display:block;font-weight:600;margin-top:8px;line-height:1.35}
 .certs small{display:block;color:var(--muted);font-size:.88rem;margin-top:4px}
 
 .skills{margin:0;display:grid;grid-template-columns:230px 1fr}
 .skills dt,.skills dd{padding:16px 0;border-top:1px solid var(--line);margin:0}
-.skills dt{font-weight:700;padding-right:18px}
+.skills dt{font-weight:600;padding-right:18px}
 .skills dd{color:#CFC4B0}
 .skills dt:first-of-type,.skills dt:first-of-type+dd{border-top:0;padding-top:0}
 
 .proj{list-style:none;margin:0;padding:0;display:grid;gap:16px}
 .proj>li{border:1px solid var(--line);border-radius:var(--r-lg);padding:28px 30px;background:var(--glass)}
 .proj>li:hover{border-color:var(--line-2)}
-.proj h3{margin:0;font-size:1.2rem;font-weight:700;line-height:1.35}
+.proj h3{margin:0;font-size:1.12rem;font-weight:600;line-height:1.35}
 .proj .kind{margin:4px 0 12px;color:var(--gold);font-size:.9rem}
 .proj ul{margin:0 0 16px;padding-left:1.1em;max-width:var(--measure);color:#D9CFBD}
 .proj ul li{margin:.3em 0}
@@ -181,11 +163,11 @@ section{padding:96px 0}
 footer{padding:40px 0 64px;color:var(--muted);font-size:.9rem}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:28px}
 
-/* single load moment: name rises, dossier glides in */
+/* single load moment: name rises, side panel glides in */
 @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 .hero h1 span{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
 .hero h1 span:nth-child(2){animation-delay:.1s}
-.dossier{animation:rise 1s .25s cubic-bezier(.2,.7,.2,1) both}
+.side{animation:rise 1s .25s cubic-bezier(.2,.7,.2,1) both}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 
 @media (max-width:1000px){
@@ -204,11 +186,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
   .bar{padding:0 10px}
   .bar .wrap{padding:0 6px 0 18px}
   .bar .btn{display:none}
-  .stats{grid-template-columns:1fr 1fr}
-  .stats .stat:last-child{grid-column:1/-1}
-  .dossier{padding:20px}
-  .dossier-head{flex-direction:column}
-  .badge{text-align:left}
+  .years b{font-size:4.2rem}
   .ids a{flex-wrap:wrap;row-gap:0}
   .ids small{text-align:left;flex-basis:100%;padding-left:16px}
   .proj>li{padding:22px 20px}
@@ -246,7 +224,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
   <div class="hero">
     <div class="wrap">
       <div>
-        <p class="kicker"><span lang="pt">Ciberdefesa · Virtualização · SOC</span><span lang="en">Cyber defense · Virtualization · SOC</span></p>
+        <p class="kicker">Cybersecurity Operator · Virtualization &amp; Cyber Defense</p>
         <h1><span>José</span><span class="last">Ribeiro.</span></h1>
         <p class="role">
           <span lang="pt">Operador de ciberdefesa nas Forças Armadas Portuguesas. Administração de sistemas, virtualização e ambientes de cyber range. Mestrando em Engenharia de Cibersegurança e Cibercrime no Instituto Politécnico de Beja.</span>
@@ -262,19 +240,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
         </div>
       </div>
 
-      <aside class="dossier" aria-labelledby="dossier-title">
-        <div class="dossier-head">
-          <div>
-            <p><span lang="pt">Perfil de investigação</span><span lang="en">Research profile</span></p>
-            <h2 id="dossier-title"><span lang="pt">Identificadores e redes</span><span lang="en">Identifiers &amp; networks</span></h2>
-          </div>
-          <div class="badge"><small>NATO CCDCOE</small><b>Locked Shields</b></div>
-        </div>
-        <div class="stats">
-          <div class="stat hl"><b>5</b><span lang="pt">anos em ciberdefesa</span><span lang="en">years in cyber defense</span></div>
-          <div class="stat"><b>13</b><span lang="pt">projetos de segurança</span><span lang="en">security projects</span></div>
-          <div class="stat"><b>3</b><span lang="pt">certificações</span><span lang="en">certifications</span></div>
-        </div>
+      <aside class="side">
+        <div class="years"><b data-years>5</b><span><span lang="pt">anos em ciberdefesa nas Forças Armadas</span><span lang="en">years in cyber defense with the Armed Forces</span></span></div>
         <ul class="ids">
           <li><a href="https://orcid.org/0009-0009-5024-6985" rel="me"><b>ORCID</b><small>0009-0009-5024-6985</small></a></li>
           <li><a href="https://www.cienciavitae.pt/6913-E7F8-B1F1" rel="me"><b>CiênciaID</b><small>6913-E7F8-B1F1</small></a></li>
@@ -310,7 +277,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <ol class="tl" reversed>
         <li>
           <div class="when"><span lang="pt">mar. 2026 – presente</span><span lang="en">Mar 2026 – present</span></div>
-          <h3><span lang="pt">Administração de Sistemas e Operações de Cibersegurança</span><span lang="en">Systems Administration &amp; Cybersecurity Operations</span></h3>
+          <h3>Systems Administration &amp; Cybersecurity Operations</h3>
           <p class="org"><span lang="pt">Comando de Operações de Ciberdefesa, Estado-Maior-General das Forças Armadas</span><span lang="en">Cyber Defense Operations Command, Portuguese Armed Forces General Staff</span></p>
           <ul lang="pt">
             <li>Administração e operação segura de serviços de infraestrutura crítica: Active Directory, DNS, DHCP, AD CS, Root CA e Exchange.</li>
@@ -335,7 +302,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
         </li>
         <li>
           <div class="when"><span lang="pt">mar. 2023 – presente</span><span lang="en">Mar 2023 – present</span></div>
-          <h3><span lang="pt">Administrador de Virtualização e Simulação de Phishing</span><span lang="en">Virtualization Administrator &amp; Phishing Simulation</span></h3>
+          <h3>Virtualization Administrator &amp; Phishing Simulation</h3>
           <p class="org"><span lang="pt">Comando de Operações de Ciberdefesa, Estado-Maior-General das Forças Armadas</span><span lang="en">Cyber Defense Operations Command, Portuguese Armed Forces General Staff</span></p>
           <ul lang="pt">
             <li>Gestão de plataformas de virtualização e ambientes de cyber range para treino avançado de cibersegurança.</li>
@@ -354,7 +321,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
         </li>
         <li>
           <div class="when"><span lang="pt">nov. 2021 – presente</span><span lang="en">Nov 2021 – present</span></div>
-          <h3><span lang="pt">Serviço Militar</span><span lang="en">Military Service</span></h3>
+          <h3>Military Service</h3>
           <p class="org"><span lang="pt">Força Aérea Portuguesa</span><span lang="en">Portuguese Air Force</span></p>
           <ul lang="pt"><li>Serviço militar operacional, com colocação em atividades relacionadas com a ciberdefesa.</li></ul>
           <ul lang="en"><li>Operational military service with assignment to cyber defense-related activities.</li></ul>
@@ -375,12 +342,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
           </li>
           <li>
             <div class="when">2024 – 2026</div>
-            <h3><span lang="pt">CTeSP em Cibersegurança</span><span lang="en">CTeSP (Higher Professional Technical Course) in Cybersecurity</span></h3>
+            <h3><span lang="pt">CTeSP em Cibersegurança</span><span lang="en">CTeSP – Cybersecurity</span></h3>
             <p class="org">ISTEC Lisboa</p>
           </li>
           <li>
             <div class="when"><span lang="pt">fev. 2022 – fev. 2023</span><span lang="en">Feb 2022 – Feb 2023</span></div>
-            <h3><span lang="pt">Curso de Analista Forense Digital</span><span lang="en">Digital Forensics Analyst Course</span></h3>
+            <h3>Digital Forensics Analyst Course</h3>
             <p class="org"><span lang="pt">IUM – Instituto Universitário Militar, Escola de Ciberdefesa</span><span lang="en">IUM – Military University Institute, Cyber Defence School</span></p>
             <ul lang="pt"><li>Análise forense digital, resposta a incidentes e formação em cibersegurança.</li></ul>
             <ul lang="en"><li>Digital forensics analysis, incident response and cybersecurity training.</li></ul>
@@ -390,7 +357,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
         <h3 class="sub"><span lang="pt">Certificações</span><span lang="en">Certifications</span></h3>
         <ul class="certs">
           <li><span class="yr">2025</span><div><b>Check Point Security Administrator R81.20 (CCSA)</b><small>Rumos</small></div></li>
-          <li><span class="yr">2025</span><div><b><span lang="pt">Administração e Configuração do Windows Server 2022</span><span lang="en">Administration and Configuration of Windows Server 2022</span></b><small>Galileu</small></div></li>
+          <li><span class="yr">2025</span><div><b>Administration and Configuration of Windows Server 2022</b><small>Galileu</small></div></li>
           <li><span class="yr">2025</span><div><b>Scrum Fundamentals Certified (SFC)</b><small>SCRUMstudy</small></div></li>
         </ul>
       </div>
@@ -401,24 +368,24 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
     <div class="wrap sec">
       <h2><span lang="pt">Competências</span><span lang="en">Skills</span></h2>
       <dl class="skills">
-        <dt><span lang="pt">Sistemas operativos</span><span lang="en">Operating systems</span></dt>
+        <dt>Operating systems</dt>
         <dd>Windows Server, Linux</dd>
-        <dt><span lang="pt">Administração de sistemas</span><span lang="en">System administration</span></dt>
-        <dd><span lang="pt">Active Directory, DNS, DHCP, gestão de utilizadores e permissões, hardening</span><span lang="en">Active Directory, DNS, DHCP, user and permission management, system hardening</span></dd>
-        <dt><span lang="pt">Virtualização</span><span lang="en">Virtualization</span></dt>
-        <dd><span lang="pt">VMware ESXi, virtualização de sistemas operativos, ambientes de cyber range, conceção de infraestruturas virtuais</span><span lang="en">VMware ESXi, OS virtualization, cyber range environments, virtual infrastructure design</span></dd>
-        <dt><span lang="pt">Backup e recuperação</span><span lang="en">Backup &amp; recovery</span></dt>
-        <dd><span lang="pt">Veeam Backup &amp; Replication, gestão de backups, operações de restauro, recuperação de desastres</span><span lang="en">Veeam Backup &amp; Replication, backup management, restore operations, disaster recovery</span></dd>
-        <dt><span lang="pt">Redes</span><span lang="en">Networking</span></dt>
-        <dd><span lang="pt">TCP/IP, DNS, DHCP, VLANs, segmentação de rede</span><span lang="en">TCP/IP, DNS, DHCP, VLANs, network segmentation</span></dd>
-        <dt><span lang="pt">Cibersegurança e SOC</span><span lang="en">Cybersecurity &amp; SOC</span></dt>
-        <dd><span lang="pt">Análise de logs, monitorização de segurança, deteção de incidentes, SIEM (QRadar), análise de ameaças</span><span lang="en">Log analysis, security monitoring, incident detection, SIEM (QRadar), threat analysis</span></dd>
-        <dt><span lang="pt">Forense digital</span><span lang="en">Digital forensics</span></dt>
-        <dd><span lang="pt">FTK Imager, Autopsy, recuperação de ficheiros, análise de memória (Volatility), tratamento de evidências</span><span lang="en">FTK Imager, Autopsy, file recovery, memory analysis (Volatility), evidence handling</span></dd>
-        <dt><span lang="pt">Ferramentas de segurança e análise</span><span lang="en">Security &amp; analysis tools</span></dt>
+        <dt>System administration</dt>
+        <dd>Active Directory, DNS, DHCP, user and permission management, system hardening</dd>
+        <dt>Virtualization</dt>
+        <dd>VMware ESXi, OS virtualization, cyber range environments, virtual infrastructure design</dd>
+        <dt>Backup &amp; recovery</dt>
+        <dd>Veeam Backup &amp; Replication, backup management, restore operations, disaster recovery</dd>
+        <dt>Networking</dt>
+        <dd>TCP/IP, DNS, DHCP, VLANs, network segmentation</dd>
+        <dt>Cybersecurity &amp; SOC</dt>
+        <dd>Log analysis, security monitoring, incident detection, SIEM (QRadar), threat analysis</dd>
+        <dt>Digital forensics</dt>
+        <dd>FTK Imager, Autopsy, file recovery, memory analysis (Volatility), evidence handling</dd>
+        <dt>Security &amp; analysis tools</dt>
         <dd>Wireshark, Volatility</dd>
-        <dt><span lang="pt">Competências profissionais</span><span lang="en">Professional skills</span></dt>
-        <dd><span lang="pt">Documentação técnica, análise de incidentes, formação de sensibilização para a segurança, disciplina operacional</span><span lang="en">Technical documentation, incident analysis, security awareness training, operational discipline</span></dd>
+        <dt>Professional skills</dt>
+        <dd>Technical documentation, incident analysis, security awareness training, operational discipline</dd>
       </dl>
     </div>
   </section>
@@ -429,8 +396,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <ul class="proj">
 
         <li class="flag">
-          <h3><span lang="pt">Participação no Locked Shields (Blue Team)</span><span lang="en">Locked Shields Participation (Blue Team)</span></h3>
-          <p class="kind"><span lang="pt">Exercício de ciberdefesa do NATO CCDCOE</span><span lang="en">NATO CCDCOE cyber exercise</span></p>
+          <h3>Locked Shields Participation (Blue Team)</h3>
+          <p class="kind">NATO CCDCOE cyber exercise</p>
           <ul lang="pt">
             <li>Participação no exercício anual Locked Shields, integrado numa blue team.</li>
             <li>Responsável pela defesa da infraestrutura Windows, incluindo serviços críticos como o AD CS.</li>
@@ -445,8 +412,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
         </li>
 
         <li>
-          <h3><span lang="pt">Infraestrutura de cyber range para exercícios de ciberdefesa (CYBERDEX 2024/2026)</span><span lang="en">Cyber range infrastructure for cyber defense exercises (CYBERDEX 2024/2026)</span></h3>
-          <p class="kind"><span lang="pt">Ambiente interno para exercícios de ciberdefesa</span><span lang="en">Internal cyber defense exercise environment</span></p>
+          <h3>Cyber range infrastructure for cyber defense exercises (CYBERDEX 2024/2026)</h3>
+          <p class="kind">Internal cyber defense exercise environment</p>
           <ul lang="pt">
             <li>Conceção e implementação de uma infraestrutura de cyber range completa para exercícios internos blue/red team.</li>
             <li>Ambientes do tipo empresarial com Active Directory, DNS, DHCP, Exchange e postos de trabalho Windows e Linux.</li>
@@ -463,8 +430,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
         </li>
 
         <li>
-          <h3><span lang="pt">Arquitetura de monitorização de segurança e correlação de logs</span><span lang="en">Security monitoring and log correlation architecture</span></h3>
-          <p class="kind"><span lang="pt">Deteção e prevenção de exfiltração de dados</span><span lang="en">Detection and data exfiltration prevention</span></p>
+          <h3>Security monitoring and log correlation architecture</h3>
+          <p class="kind">Detection and data exfiltration prevention</p>
           <ul lang="pt">
             <li>Arquitetura de segurança que integra SIEM e mecanismos de deteção baseados em rede.</li>
             <li>Recolha e correlação de logs com Wazuh para visibilidade centralizada.</li>
@@ -481,8 +448,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
         </li>
 
         <li>
-          <h3><span lang="pt">Plataforma de simulação de phishing (open source)</span><span lang="en">Phishing simulation platform (open source)</span></h3>
-          <p class="kind"><span lang="pt">Framework de sensibilização e testes de segurança</span><span lang="en">Security awareness and testing framework</span></p>
+          <h3>Phishing simulation platform (open source)</h3>
+          <p class="kind">Security awareness and testing framework</p>
           <ul lang="pt">
             <li>Infraestrutura de simulação de phishing com ferramentas open source para testar a sensibilização dos utilizadores.</li>
             <li>Integração do GoPhish com o Moodle e um servidor SMTP interno para gestão de campanhas.</li>
@@ -497,8 +464,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
         </li>
 
         <li>
-          <h3><span lang="pt">Sistema adaptativo de campanhas de phishing com seleção de alvos por IA</span><span lang="en">Adaptive phishing campaign system with AI-based targeting</span></h3>
-          <p class="kind"><span lang="pt">Modelo de seleção de utilizadores baseado no risco</span><span lang="en">Risk-based user selection model</span></p>
+          <h3>Adaptive phishing campaign system with AI-based targeting</h3>
+          <p class="kind">Risk-based user selection model</p>
           <ul lang="pt">
             <li>Modelo que seleciona dinamicamente os alvos de phishing com base no perfil de risco de cada utilizador.</li>
             <li>Considera fatores como a criticidade da função, a sensibilidade dos dados e o comportamento em campanhas anteriores.</li>
@@ -509,12 +476,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
             <li>Incorporated factors such as role criticality, data sensitivity and prior behavior in previous campaigns.</li>
             <li>Improved the effectiveness of awareness campaigns through intelligent targeting mechanisms.</li>
           </ul>
-          <ul class="tags"><li>Python</li><li><span lang="pt">Análise de dados</span><span lang="en">Data analysis</span></li></ul>
+          <ul class="tags"><li>Python</li><li>Data analysis</li></ul>
         </li>
 
         <li>
-          <h3><span lang="pt">Arquitetura de autenticação segura com deteção comportamental e honeypots</span><span lang="en">Secure authentication architecture with behavioral detection and honeypots</span></h3>
-          <p class="kind"><span lang="pt">Controlo de acessos e mecanismos de deceção</span><span lang="en">Access control and deception mechanisms</span></p>
+          <h3>Secure authentication architecture with behavioral detection and honeypots</h3>
+          <p class="kind">Access control and deception mechanisms</p>
           <ul lang="pt">
             <li>Arquitetura concetual que combina sistemas de login físico com monitorização comportamental.</li>
             <li>Mecanismos de deceção para detetar tentativas de acesso não autorizado.</li>
@@ -525,12 +492,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
             <li>Integrated deception mechanisms to detect unauthorized access attempts.</li>
             <li>Explored methods to correlate authentication anomalies with potential threat activity.</li>
           </ul>
-          <ul class="tags"><li>Honeypots</li><li><span lang="pt">Análise comportamental</span><span lang="en">Behavioral analysis</span></li></ul>
+          <ul class="tags"><li>Honeypots</li><li>Behavioral analysis</li></ul>
         </li>
 
         <li>
-          <h3><span lang="pt">Hardening de sistemas Linux com SELinux e AppArmor</span><span lang="en">Linux system hardening using SELinux and AppArmor</span></h3>
-          <p class="kind"><span lang="pt">Proteção de sistemas e controlo de acessos</span><span lang="en">System protection and access control</span></p>
+          <h3>Linux system hardening using SELinux and AppArmor</h3>
+          <p class="kind">System protection and access control</p>
           <ul lang="pt">
             <li>Políticas de controlo de acesso obrigatório (MAC) para restringir operações ao nível do sistema.</li>
             <li>Perfis SELinux e AppArmor para proteger ficheiros e serviços críticos.</li>
@@ -545,8 +512,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
         </li>
 
         <li>
-          <h3><span lang="pt">Análise de ataque e defesa em redes sem fios WPA2-PSK</span><span lang="en">WPA2-PSK wireless attack and defense analysis</span></h3>
-          <p class="kind"><span lang="pt">Avaliação de segurança Wi-Fi</span><span lang="en">Wi-Fi security assessment</span></p>
+          <h3>WPA2-PSK wireless attack and defense analysis</h3>
+          <p class="kind">Wi-Fi security assessment</p>
           <ul lang="pt">
             <li>Captura e quebra de handshakes WPA2.</li>
             <li>Análise de fragilidades em configurações sem fios e políticas de passwords.</li>
@@ -561,8 +528,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
         </li>
 
         <li>
-          <h3><span lang="pt">Análise forense digital de sistemas comprometidos</span><span lang="en">Digital forensics analysis of compromised systems</span></h3>
-          <p class="kind"><span lang="pt">Investigação de incidentes e análise de evidências</span><span lang="en">Incident investigation and evidence analysis</span></p>
+          <h3>Digital forensics analysis of compromised systems</h3>
+          <p class="kind">Incident investigation and evidence analysis</p>
           <ul lang="pt">
             <li>Participação em investigações forenses de sistemas comprometidos.</li>
             <li>Análise de memória, recuperação de ficheiros e exame de metadados.</li>
@@ -577,8 +544,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
         </li>
 
         <li>
-          <h3><span lang="pt">Infraestrutura empresarial com serviços seguros e integração web</span><span lang="en">Enterprise infrastructure with secure services and web integration</span></h3>
-          <p class="kind">AD, PKI, <span lang="pt">serviços web</span><span lang="en">web services</span>, SSO</p>
+          <h3>Enterprise infrastructure with secure services and web integration</h3>
+          <p class="kind">AD, PKI, web services, SSO</p>
           <ul lang="pt">
             <li>Implementação de infraestrutura empresarial com Active Directory, DNS, DHCP e Exchange.</li>
             <li>Certificados SSL e mecanismos seguros de partilha de ficheiros.</li>
@@ -593,8 +560,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
         </li>
 
         <li>
-          <h3><span lang="pt">Infraestrutura virtualizada de alta disponibilidade</span><span lang="en">High availability virtualized infrastructure</span></h3>
-          <p class="kind"><span lang="pt">Resiliência, replicação e backup</span><span lang="en">Resilience, replication and backup</span></p>
+          <h3>High availability virtualized infrastructure</h3>
+          <p class="kind">Resilience, replication and backup</p>
           <ul lang="pt">
             <li>Infraestrutura com serviços de domínio, GPOs, servidores de ficheiros e plataformas de virtualização.</li>
             <li>Replicação, live migration e estratégias de backup e recuperação.</li>
@@ -609,8 +576,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
         </li>
 
         <li>
-          <h3><span lang="pt">Plataforma de reconhecimento anónimo com mapeamento MITRE ATT&amp;CK</span><span lang="en">Anonymous reconnaissance platform with MITRE ATT&amp;CK mapping</span></h3>
-          <p class="kind"><span lang="pt">Segurança ofensiva e recolha de informação</span><span lang="en">Offensive security and intelligence gathering</span></p>
+          <h3>Anonymous reconnaissance platform with MITRE ATT&amp;CK mapping</h3>
+          <p class="kind">Offensive security and intelligence gathering</p>
           <ul lang="pt">
             <li>Plataforma de reconhecimento anónimo com Tor e encadeamento de proxies.</li>
             <li>Integração de ferramentas de scanning e técnicas de descoberta de vulnerabilidades.</li>
@@ -625,8 +592,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
         </li>
 
         <li>
-          <h3><span lang="pt">Arquitetura avançada de ciberdefesa (simulação Red October)</span><span lang="en">Advanced cyber defense architecture (Red October simulation)</span></h3>
-          <p class="kind"><span lang="pt">Deteção, deceção e Zero Trust</span><span lang="en">Detection, deception and Zero Trust</span></p>
+          <h3>Advanced cyber defense architecture (Red October simulation)</h3>
+          <p class="kind">Detection, deception and Zero Trust</p>
           <ul lang="pt">
             <li>Arquitetura de defesa em camadas contra ameaças persistentes avançadas (APT).</li>
             <li>SIEM, monitorização de rede e capacidades de deteção de anomalias.</li>
@@ -667,6 +634,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
   var saved=null; try{saved=localStorage.getItem('lang')}catch(e){}
   var initial=saved||'pt';
   set(initial);
+  var y=document.querySelector('[data-years]');
+  if(y){var ms=Date.now()-new Date(2021,10,1).getTime();y.textContent=Math.max(1,Math.round(ms/31557600000));}
   btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.set)})});
 })();
 </script>
